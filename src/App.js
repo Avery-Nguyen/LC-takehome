@@ -10,7 +10,7 @@ function App() {
       Hello World
       <QuoteForm/>
       <QuoteList/>
-      <QuoteDetails/>
+      {/* <QuoteDetails/> */}
     </div>
   );
 }

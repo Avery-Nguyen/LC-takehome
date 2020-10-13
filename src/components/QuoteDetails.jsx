@@ -1,9 +1,13 @@
 import React from 'react'
+import { Popover }from '@material-ui/core';
 
-export default function QuoteDetails() {
+export default function QuoteDetails(props) {
+
+ 
+
   return (
     <div>
-      Quote Details
+      details on Quotes
     </div>
   )
 }

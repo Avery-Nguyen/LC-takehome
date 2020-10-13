@@ -1,2 +1,2 @@
-insert into users (email, first_name, last_name, phone) values ('test@test,com', 'Avery', 'Nguyen', 2, '4031234567');
-insert into users (email, first_name, last_name, phone) values ('tester@test,com', 'Bill', 'Gates', 2, '4039876543');
+insert into users (email, first_name, last_name, phone) values ('test@test,com', 'Avery', 'Nguyen', '4031234567');
+insert into users (email, first_name, last_name, phone) values ('tester@test,com', 'Bill', 'Gates', '4039876543');

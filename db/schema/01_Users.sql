@@ -4,5 +4,5 @@ CREATE TABLE users (
   email VARCHAR(255) NOT NULL,
   first_name TEXT NOT NULL,
   last_name TEXT NOT NULL,
-  phone VARCHAR(255) NOT NULL,
+  phone VARCHAR(255) NOT NULL
 );
