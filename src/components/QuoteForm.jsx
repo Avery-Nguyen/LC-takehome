@@ -1,9 +1,10 @@
 import React from 'react'
 import { TextField, MenuItem, Button }from '@material-ui/core';
+import '../style/quoteForm.scss';
 
 export default function QuoteForm() {
   return (
-    <div>
+    <div className='quote-form'>
       <h1>Quick Quote</h1>
       <form>
         <TextField id="outlined-basic" variant="outlined" label="From"/>
