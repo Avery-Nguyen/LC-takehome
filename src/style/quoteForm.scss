@@ -1,5 +1,19 @@
 @import 'src/style/_lib.scss';
 
 .quote-form {
-  border: $border-component
+  border: $border-component;
+  margin: $component-margin;
+  background-color: $component-background-colour;
+  border-radius: $border-radius;
+  width: 40%;
 }
+
+.MuiButton-containedPrimary {
+  top: 17px;
+  left: 17px;
+}
+
+.makeStyles-root-1 .MuiTextField-root {
+  width: 200px;
+}
+

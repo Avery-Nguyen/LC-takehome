@@ -1,5 +1,7 @@
 @import 'src/style/_lib.scss';
 
 .top-nav {
-  border: $border-nav
+  border: $border-nav;
+  height: 75px;
+  background-color: #5f6caf;
 }

@@ -3,8 +3,8 @@ import '../style/revenue.scss';
 
 export default function Revenue() {
   return (
-    <div classname='revenue'>
-      Revenue
+    <div className='revenue'>
+      <h1>Revenue</h1>
     </div>
   )
 }

@@ -1,5 +1,8 @@
 @import 'src/style/_lib.scss';
 
 .side-nav {
-  border: $border-nav
+  border: $border-nav;
+  width: 150px;
+  background-color: lightsteelblue;
+  height: 600px;
 }

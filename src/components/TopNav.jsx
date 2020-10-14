@@ -4,7 +4,7 @@ import '../style/topNav.scss';
 export default function TopNav() {
   return (
     <div className='top-nav'>
-      Nav
+      <h1> Nav</h1>
     </div>
   )
 }

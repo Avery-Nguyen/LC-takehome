@@ -4,7 +4,7 @@ import '../style/popularDestination.scss';
 export default function PopularDestination() {
   return (
     <div className='popular-destination'>
-      Popular Destination
+      <h1>Popular Destination</h1>
     </div>
   )
 }

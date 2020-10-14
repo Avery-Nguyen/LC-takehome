@@ -57,7 +57,7 @@ export default function QuoteList() {
       <h1>Pending Quotes</h1>
       {open && <QuoteDetails quoteID={quoteID} />}
       <TableContainer>
-        <Table>
+        <Table size="small">
           <TableHead>
             <TableRow>
               <TableCell>ID #</TableCell>

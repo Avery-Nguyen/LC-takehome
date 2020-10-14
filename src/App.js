@@ -1,6 +1,7 @@
 import React from 'react';
 import Chat from './components/Chat';
 import CloseRatio from './components/CloseRatio';
+import NewLeads from './components/NewLeads';
 import PopularDestination from './components/PopularDestination';
 import PotentialRevenue from './components/PotentialRevenue';
 import QuoteForm from './components/QuoteForm';
@@ -17,15 +18,16 @@ function App() {
       <div className='layout-row'>
         <SideNav/>
         <div>
-          <div className='layout-row'>
+          <div className='layout-component'>
             <QuoteForm/>
             <QuoteList/>
+            <NewLeads/>
           </div>
-          <div className='layout-row'>
+          <div className='layout-component'>
             <PopularDestination/>
             <Chat/>
           </div>
-          <div className='layout-row'>
+          <div className='layout-component'>
             <Revenue/>
             <PotentialRevenue/>
             <CloseRatio/>

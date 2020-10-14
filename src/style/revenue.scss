@@ -1,5 +1,10 @@
 @import 'src/style/_lib.scss';
 
 .revenue {
-  border: $border-component
+  border: $border-component;
+  margin: $component-margin;
+  background-color: $component-background-colour;
+  border-radius: $border-radius;
+  width: 40%;
+  height: 200px;
 }

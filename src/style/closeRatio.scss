@@ -1,5 +1,9 @@
 @import 'src/style/_lib.scss';
 
 .close-ratio {
-  border: $border-component
+  border: $border-component;
+  margin: $component-margin;
+  background-color: $component-background-colour;
+  border-radius: $border-radius;
+  width: 20%;
 }

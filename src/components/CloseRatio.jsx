@@ -4,7 +4,7 @@ import '../style/closeRatio.scss';
 export default function CloseRatio() {
   return (
     <div className='close-ratio'>
-      Close Ratio
+      <h1>Close Ratio</h1>
     </div>
   )
 }
