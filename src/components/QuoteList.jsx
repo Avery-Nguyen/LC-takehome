@@ -22,17 +22,23 @@ import QuoteDetails from './QuoteDetails';
 export default function QuoteList() {
   const [quotes, setQuotes] = useState([])
   const [open, setOpen] = useState(false)
+  const [quoteID, setQuoteID] = useState(null)
 
   useEffect(() => {
     axios.get(`/api/quotes`)
       .then((data) => {
-      console.log("App -> data", data.data.quotes)
+      // console.log("App -> data", data.data.quotes)
       setQuotes(data.data.quotes);
       });
   }, [])
 
-  const toggleOpen = function () {
-    setOpen(true);
+  const toggleOpen = function (id) {
+    if(!open) {
+      setOpen(true);
+      setQuoteID(id);
+    } else {
+      setOpen(false);
+    }
   };
 
   const quoteRows = quotes.map( quote => {
@@ -49,7 +55,7 @@ export default function QuoteList() {
   return (
     <div className="quote-list">
       <h1>Quote List</h1>
-      {open && <QuoteDetails/>}
+      {open && <QuoteDetails quoteID={quoteID} />}
       <TableContainer>
         <Table>
           <TableHead>
