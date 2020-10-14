@@ -66,6 +66,7 @@ module.exports = (client) => {
 
   router.post('/createquote', function (req, res) {
   console.log("req", req.body)
+  //add here to make a request to the travel api to get proper info
     
     const randPrice = `$${(Math.random()*1000000).toFixed(0)}`
     //can be change to add proper api
