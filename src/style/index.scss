@@ -1,0 +1,28 @@
+@import 'src/style/_lib.scss';
+
+body {
+  margin: 0px;
+  height: 100vh;
+  width: 100vw;
+}
+
+.root {
+  height: 100%;
+  
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.layout-row {
+  display: flex;
+  flex-direction: row;
+}
+
+// .layout-column {
+//   display: flex;
+//   flex-direction: column;
+// }

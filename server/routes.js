@@ -9,6 +9,7 @@ module.exports = (client) => {
     FROM quotes
     JOIN users on users.id = user_id
     ORDER BY quotes.id DESC 
+    LIMIT 9
     ;`)
       .then(data => {
         // console.log(data.rows);

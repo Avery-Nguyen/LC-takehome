@@ -54,7 +54,7 @@ export default function QuoteList() {
 
   return (
     <div className="quote-list">
-      <h1>Quote List</h1>
+      <h1>Pending Quotes</h1>
       {open && <QuoteDetails quoteID={quoteID} />}
       <TableContainer>
         <Table>
