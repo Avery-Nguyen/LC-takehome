@@ -17,7 +17,7 @@ function App() {
       <TopNav/>
       <div className='layout-row'>
         <SideNav/>
-        <div>
+        <div className='main'>
           <div className='layout-component'>
             <QuoteForm/>
             <QuoteList/>

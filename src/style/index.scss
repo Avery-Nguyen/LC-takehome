@@ -4,6 +4,7 @@ body {
   margin: 0px;
   // height: 100%;
   width: 100vw;
+  font-family: 'Amiko', sans-serif;
 }
 
 h1 {
@@ -29,11 +30,10 @@ h1 {
 .layout-component {
   display: flex;
   flex-direction: row;
-  width: 80vw;
+  width: 100%;
   justify-content: space-between;
 }
 
-// .layout-column {
-//   display: flex;
-//   flex-direction: column;
-// }
+.main {
+  width: 100%;
+}

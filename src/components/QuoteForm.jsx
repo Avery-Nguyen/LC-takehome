@@ -23,6 +23,20 @@ export default function QuoteForm() {
   const [transport, setTransport] = useState(false);
   const [name, setName] = useState('')
 
+  function formatDate() {
+    var d = new Date(),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
+
+    if (month.length < 2) 
+        month = '0' + month;
+    if (day.length < 2) 
+        day = '0' + day;
+
+    return [year, month, day].join('-');
+}
+
   const submitQuote = function () {
     console.log('submitted!!!');
     // event.preventDefault();
@@ -48,7 +62,8 @@ export default function QuoteForm() {
   
       });
   };
-
+  const current = formatDate();
+  
   return (
     <div className='quote-form'>
       <h1>Quick Quote</h1>
@@ -60,9 +75,9 @@ export default function QuoteForm() {
           onChange={event => setDestination(event.target.value)} />
         </div>
         <div>
-          <TextField id="outlined-basic" variant="outlined" type="date" label="Depart Date" defaultValue="2017-05-24"
+          <TextField id="outlined-basic" variant="outlined" type="date" label="Depart Date" defaultValue={current}
           onChange={event => setDepartDate(event.target.value)} />
-          <TextField id="outlined-basic" variant="outlined" type="date" label="Return Date" defaultValue="2017-05-24"
+          <TextField id="outlined-basic" variant="outlined" type="date" label="Return Date" defaultValue={current}
           onChange={event => setReturnDate(event.target.value)} />
         </div>
         <div>

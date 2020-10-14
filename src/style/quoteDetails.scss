@@ -1,0 +1,15 @@
+@import 'src/style/_lib.scss';
+
+.quote-details {
+  position: absolute;
+  background-color: $component-background-colour;
+  width: 85%;
+  height: 85%;
+  left: 150px;
+  top: 100px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 2;
+  border-radius: $border-radius;
+  border: $border-component;
+}

@@ -21,8 +21,6 @@ import QuoteDetails from './QuoteDetails';
 
 export default function QuoteList() {
   const [quotes, setQuotes] = useState([])
-  const [open, setOpen] = useState(false)
-  const [quoteID, setQuoteID] = useState(null)
 
   useEffect(() => {
     axios.get(`/api/quotes`)
@@ -32,18 +30,10 @@ export default function QuoteList() {
       });
   }, [])
 
-  const toggleOpen = function (id) {
-    if(!open) {
-      setOpen(true);
-      setQuoteID(id);
-    } else {
-      setOpen(false);
-    }
-  };
 
   const quoteRows = quotes.map( quote => {
     return (
-      <TableRow key={quote.id} onClick={() => toggleOpen(quote.id)}>
+      <TableRow key={quote.id}>
         <TableCell>{quote.id}</TableCell>
         <TableCell>{quote.first_name}</TableCell>
         <TableCell>{quote.destination_location}</TableCell>
@@ -55,7 +45,6 @@ export default function QuoteList() {
   return (
     <div className="quote-list">
       <h1>Pending Quotes</h1>
-      {open && <QuoteDetails quoteID={quoteID} />}
       <TableContainer>
         <Table size="small">
           <TableHead>

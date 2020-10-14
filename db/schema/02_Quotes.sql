@@ -9,5 +9,6 @@ CREATE TABLE quotes (
   num_people smallint NOT NULL,
   transportation BOOLEAN DEFAULT FALSE,
   price VARCHAR(255) NOT NULL,
+  pending BOOLEAN DEFAULT TRUE,
   date_created TIMESTAMP DEFAULT NOW()::timestamp
 );

@@ -1,43 +1,67 @@
 import React, { useEffect, useState} from 'react'
 import axios from "axios"
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow }from '@material-ui/core';
+import '../style/quoteDetails.scss'
 
 export default function QuoteDetails(props) {
 
- const [details, setDetails] = useState({})
+ const [details, setDetails] = useState([])
 // console.log(props.quoteID);
  useEffect(() => {
-  axios.post(`/api/quotesdetails`, {
-    quote_id: props.quoteID
-  })
+  axios.get(`/api/quotesdetails`)
     .then((res) => {
       // console.log(res)
-      console.log(res.data.quote[0], 'sql response')
-      setDetails(res.data.quote[0]);
+      // console.log(res.data.quote[0], 'sql response')
+      setDetails(res.data.quote);
 
     });
- }, [props.quoteID])
+ }, [])
+
+ const quoteRows = details.map( quote => {
+  return (
+    <TableRow key={quote.id}>
+      <TableCell>{quote.id}</TableCell>
+      <TableCell>{quote.first_name}</TableCell>
+      <TableCell>{quote.phone}</TableCell>
+      <TableCell>{quote.email}</TableCell>
+      <TableCell>{quote.destination_location}</TableCell>
+      <TableCell>{quote.departure_location}</TableCell>
+      <TableCell>{quote.price}</TableCell>
+      <TableCell>{quote.departure_date}</TableCell>
+      <TableCell>{quote.destination_date}</TableCell>
+      <TableCell>{quote.num_people}</TableCell>
+      <TableCell>{quote.transportation ? 'Yes' : 'No'}</TableCell>
+      <TableCell>{quote.pending ? 'Yes' : 'No'}</TableCell>
+    </TableRow>
+  );
+});
 
   return (
-    <div>
-      Name: {details.first_name}
-      <br/>
-      Phone Number: {details.phone}
-      <br/>
-      Email: {details.email}
-      <br/>
-      Destination: {details.destination_location}
-      <br/>
-      Departure: {details.departure_location}
-      <br/>
-      Price: {details.price}
-      <br/>
-      Date of Departure: {details.departure_date}
-      <br/>
-      Date of Return: {details.destination_date}
-      <br/>
-      Number of Travellers: {details.num_people}
-      <br/>
-      Transporation Needed?: {details.transportation ? 'Yes' : 'No'}
+    <div className='quote-details'>
+      <TableContainer >
+        <Table size="small">
+          <TableHead>
+            <TableRow>
+              <TableCell>ID #</TableCell>
+              <TableCell>Name</TableCell>
+              <TableCell>Phone Number</TableCell>
+              <TableCell>Email</TableCell>
+              <TableCell>Destination</TableCell>
+              <TableCell>Departure</TableCell>
+              <TableCell>Price</TableCell>
+              <TableCell>Date of Departure</TableCell>
+              <TableCell>Date of Return</TableCell>
+              <TableCell>Number of Travellers</TableCell>
+              <TableCell>Transport Needed</TableCell>
+              <TableCell>Pending</TableCell>
+              
+            </TableRow>
+          </TableHead>
+          <TableBody>
+           {quoteRows}
+          </TableBody>
+        </Table>
+      </TableContainer>
     </div>
   )
 }
