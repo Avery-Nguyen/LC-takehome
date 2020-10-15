@@ -44,9 +44,9 @@ export default function QuoteForm() {
     if (name === '') {
       setError('Name cannot be blank')
     } else if (departure === '') {
-      setError('Departure cannot be blank')
+      setError('Choose a departure location')
     } else if (destination === '') {
-      setError('Destination cannot be blank')
+      setError('Choose a destination location')
     } else if ((departDate === '') ||(returnDate === '')) {
       setError('Please choose a date')
     } else if (numPpl === null) {
@@ -82,7 +82,7 @@ export default function QuoteForm() {
   return (
     <div className='quote-form'>
       <h1>Quick Quote</h1>
-      {error}
+      <div className='error'>{error}</div>
       <form className={classes.root}>
         <div>
           <TextField id="outlined-basic" variant="outlined" label="From" 
