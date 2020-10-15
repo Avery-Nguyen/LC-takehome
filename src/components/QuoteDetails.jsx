@@ -6,12 +6,9 @@ import '../style/quoteDetails.scss'
 export default function QuoteDetails(props) {
 
  const [details, setDetails] = useState([])
-// console.log(props.quoteID);
  useEffect(() => {
   axios.get(`/api/quotesdetails`)
     .then((res) => {
-      // console.log(res)
-      // console.log(res.data.quote[0], 'sql response')
       setDetails(res.data.quote);
 
     });

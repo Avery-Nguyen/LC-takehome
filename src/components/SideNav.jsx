@@ -15,7 +15,7 @@ export default function SideNav() {
   return (
     <div className='side-nav'>
       <h1>Side Nav</h1>
-      <div onClick={toggleOpen} >Quotes</div>
+      <div className='quote-sidebar' onClick={toggleOpen} >Quotes</div>
       {open && <QuoteDetails/>}
     </div>
   )

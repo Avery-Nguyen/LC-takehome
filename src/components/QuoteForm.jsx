@@ -16,10 +16,8 @@ export default function QuoteForm() {
   const [departure, setDeparture] = useState('');
   const [destination, setDestination] = useState('');
   const [departDate, setDepartDate] = useState('');
-  // console.log("QuoteForm -> departDate", departDate)
   const [returnDate, setReturnDate] = useState('');
   const [numPpl, setNumPpl] = useState(null);
-  // console.log("QuoteForm -> numPpl", typeof numPpl)
   const [transport, setTransport] = useState(false);
   const [name, setName] = useState('')
   const [error, setError] = useState('')
@@ -39,8 +37,6 @@ export default function QuoteForm() {
 }
 
   const submitQuote = function () {
-    // console.log('submitted!!!');
-    // event.preventDefault();
     if (name === '') {
       setError('Name cannot be blank')
     } else if (departure === '') {
@@ -56,8 +52,6 @@ export default function QuoteForm() {
         name
       })
         .then((res) => {
-          // console.log(res)
-          // console.log(res.data.user[0], 'sql response')
           const people = parseInt(numPpl);
           return axios.post('/api/createquote', {
             user_id: res.data.user[0].id,
@@ -70,6 +64,7 @@ export default function QuoteForm() {
           })
           .then((res) => {
             console.log(res);
+            //would change to update state of other compoents instead of entire page refresh
             window.location.reload(true);
           })
     
@@ -85,6 +80,7 @@ export default function QuoteForm() {
       <div className='error'>{error}</div>
       <form className={classes.root}>
         <div>
+          {/* add api to search for airports codes only */}
           <TextField id="outlined-basic" variant="outlined" label="From" 
           onChange={event => setDeparture(event.target.value)} required/>
           <TextField id="outlined-basic" variant="outlined" label="Destination"
@@ -98,7 +94,7 @@ export default function QuoteForm() {
         </div>
         <div>
           <TextField id="outlined-basic" variant="outlined" type="number" label="People" 
-          onChange={event => setNumPpl(event.target.value)} required />
+          onChange={event => setNumPpl(event.target.value)} required inputProps={{ min: 0}}/>
           <TextField select id="outlined-basic" variant="outlined" label='Transportation'
           onChange={event => setTransport(event.target.value)} defaultValue={false} required >
             <MenuItem key='1' value={true}>Yes</MenuItem>
